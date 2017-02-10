@@ -1,0 +1,29 @@
+version: '2'
+services:
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - ./share/mysql/data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=wordpress
+      - MYSQL_USER=wordpress
+      - MYSQL_PASSWORD=password
+
+  phpfpm:
+    build: ./phpfpm/ 
+    volumes:
+      - ./share/nginx/wordpress:/usr/share/nginx/html
+    links:
+      - mysql
+
+  web:
+    image: nginx:mainline
+    volumes:
+      - ./share/nginx/wordpress:/usr/share/nginx/html
+      - ./share/nginx/conf:/etc/nginx/conf.d
+    ports:
+      - "8080:80"
+    links:
+      - phpfpm
+
