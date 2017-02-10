@@ -2,5 +2,6 @@
 
 To switch to TP1
 
-1. git clone https://github.com/hlepesant/tppolytech.git
-2. git checkout TP1
+1. sudo apt-get install git
+2. git clone https://github.com/hlepesant/tppolytech.git
+3. git checkout TP1
