@@ -7,6 +7,10 @@
 
 Prérequis : TP1
 
+Objectif : Stack Apache/PHP5/MySQL
+
+Dans 2 containers
+
 #### Opérations :
 
 1. git clone https://github.com/hlepesant/tppolytech.git
