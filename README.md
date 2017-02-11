@@ -13,11 +13,11 @@ Prérequis : TP 1
 1. cd tppolytech
 1. git checkout TP3
 1. ./run.sh
-1. Ctrl+d
+1. Ctrl+c
 1. docker-compose restart
 1. Open : http://do.ck.er.ip:8080/
 1. docker-compose logs -f web
-1. Ctrl+d
+1. Ctrl+c
 1. docker-compose stop
 1. docker-compose restart
 1. docker-compose stop
