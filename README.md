@@ -3,5 +3,6 @@
 To switch to TP1
 
 1. sudo apt-get -y install git
-2. git clone https://github.com/hlepesant/tppolytech.git
-3. git checkout TP1
+1. git clone https://github.com/hlepesant/tppolytech.git
+1. cd tppolytech
+1. git checkout TP1
