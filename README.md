@@ -23,7 +23,7 @@ Dans 2 containers
 1. cd apache
 1. ./run.sh
 1. Open : http://do.ck.er.ip:8080/
-1. Ctrl+d
+1. Ctrl+c
 1. docker ps
 1. docker ps -a
 1. docker stop mysql
