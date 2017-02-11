@@ -14,8 +14,9 @@ Prérequis : TP 3
 1. git checkout TP4
 1. ./run.sh
 1. docker-compose ps
-1. Open : [http://tp4.polytech.fr:8080/](http://tp4.polytech.fr:8080/){:target="_blank"}
-1. Open : [http://tp4.polytech.fr:8090/](http://tp4.polytech.fr:8090/){:target="_blank"}
+1. Open : [tp4.polytech.fr](http://tp4.polytech.fr:8080/){:target="_blank"}  
+
+1. Open : [Console Traefik](http://tp4.polytech.fr:8090/){:target="_blank"}
 1. docker-compose scale web=2
 1. docker-compose scale web=4
 1. docker-compose scale web=1
