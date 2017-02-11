@@ -23,3 +23,10 @@ Dans 2 containers
 1. cd apache
 1. ./run.sh
 1. Open : http://do.ck.er.ip:8080/
+1. Ctrl+d
+1. docker ps
+1. docker ps -a
+1. docker stop mysql
+1. docker rm mysql
+1. docker images
+1. docker rmi tp2_web
