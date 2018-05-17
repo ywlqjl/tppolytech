@@ -1,48 +1,12 @@
 version: '2'
 services:
-  mysql:
-    image: mysql:5.7
+  debian:
+    image: debian:jessie
     volumes:
-      - ./share/mysql/data:/var/lib/mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD=password
-      - MYSQL_DATABASE=wordpress
-      - MYSQL_USER=wordpress
-      - MYSQL_PASSWORD=password
-    labels:
-      traefik.enable: "false"
-
-  phpfpm:
-    build: ./phpfpm/ 
-    volumes:
-      - ./share/nginx/wordpress:/usr/share/nginx/html
-    links:
-      - mysql
-    labels:
-      traefik.enable: "false"
-
-  web:
-    image: nginx:mainline
-    volumes:
-      - ./share/nginx/wordpress:/usr/share/nginx/html
-      - ./share/nginx/conf:/etc/nginx/conf.d
-    links:
-      - phpfpm
-    labels:
-      - traefik.frontend.rule=Host:tp4.polytech.fr
-      - traefik.backend=tp4
-      - traefik.port=80
-      - traefik.frontend.entryPoints=http
-      - traefik.protocol=http
-
-  proxy:
-    image: traefik
-    command: --web --docker --docker.domain=docker.localhost --logLevel=DEBUG
-    ports:
-      - "8080:80"
-      - "8090:8080"
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - /dev/null:/traefik.toml
-    labels:
-      traefik.enable: "false"
+      - /:/myhost
+    #privileged: false
+    privileged: true
+    entrypoint:
+      - bash
+    tty: true
+    stdin_open: true
